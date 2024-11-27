@@ -6,7 +6,7 @@
 仅仅是在仓库中加入了App_name字段,手机客户端使用请搭配Macrodroid，来实现切换应用上报信息/同步睡眠信息
 Macrodroid配置文件请下载仓库中的"前台应用状态.macro"
 
-[**演示**](#preview) / [**部署**](#部署) / [**使用**](#使用) / [**关于**](#关于)
+[**演示**](#preview) / [**部署**](#部署) / [**使用**](#使用) 
 
 <!-- > ver: `2.0`, configver: `2` -->
 
@@ -16,9 +16,9 @@ Macrodroid配置文件请下载仓库中的"前台应用状态.macro"
 
 网页:
 
-![web-1](img/web-1.png)
+![web-1](img/image1.png)
 
-![web-2](img/web-2.png)
+![web-2](img/image2.png)
 
 服务器:
 
