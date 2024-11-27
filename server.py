@@ -4,7 +4,7 @@ import utils as u
 from data import data as data_init
 from flask import Flask, render_template, request, url_for, redirect, flash, make_response
 from markupsafe import escape
-import json
+
 
 d = data_init()
 app = Flask(__name__)
@@ -39,6 +39,9 @@ def index():
     ot = d.data['other']
     try:
         stat = d.data['status_list'][d.data['status']]
+        if(d.data['status'] == 0):
+            app_name = d.data['app_name']
+            stat['name'] = app_name
     except:
         stat = {
             'name': '未知',
@@ -76,6 +79,8 @@ def query():
     # stlst = d.data['status_list']
     try:
         stinfo = d.data['status_list'][st]
+        if(st == 0):
+            stinfo['name'] = d.data['app_name']
     except:
         stinfo = {
             'status': st,
@@ -100,6 +105,7 @@ def get_status_list():
 def set_normal():
     showip(request, '/set')
     status = escape(request.args.get("status"))
+    app_name = escape(request.args.get("app_name"))
     try:
         status = int(status)
     except:
@@ -108,15 +114,17 @@ def set_normal():
             message="argument 'status' must be a number"
         )
     secret = escape(request.args.get("secret"))
-    u.info(f'status: {status}, secret: "{secret}"')
+    u.info(f'status: {status}, name: {app_name}, secret: "{secret}"')
     secret_real = d.dget('secret')
     if secret == secret_real:
         d.dset('status', status)
+        d.dset('app_name', app_name)
         u.info('set success')
         ret = {
             'success': True,
             'code': 'OK',
-            'set_to': status
+            'set_to': status,
+            'app_name':app_name
         }
         return u.format_dict(ret)
     else:
@@ -125,27 +133,6 @@ def set_normal():
             message='invaild secret'
         )
 
-
-@app.route('/set/<secret>/<int:status>')
-def set_path(secret, status):
-    showip(request, f'/set/{secret}/{status}')
-    secret = escape(secret)
-    u.info(f'status: {status}, secret: "{secret}"')
-    secret_real = d.dget('secret')
-    if secret == secret_real:
-        d.dset('status', status)
-        u.info('set success')
-        ret = {
-            'success': True,
-            'code': 'OK',
-            'set_to': status
-        }
-        return u.format_dict(ret)
-    else:
-        return reterr(
-            code='not authorized',
-            message='invaild secret'
-        )
 
 
 if __name__ == '__main__':
