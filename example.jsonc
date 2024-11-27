@@ -30,7 +30,7 @@ version now: 2
         "background": "https://ghsrc.wyf9.top/img13.jpg", // 背景图片 url, 可用网络上的图片 api; 推荐 repo: wyf01239/imgapi (网络 api 集合)
         "alpha": 0.85, // 卡片不透明度设置 (0 ~ 1), 0 为完全透明, 1 为完全不透明
         "learn_more": "GitHub Repo", // 更多信息链接的提示, 默认为 github repo
-        "repo": "https://github.com/wyf9/sleepy", // 更多信息链接的目标, 可填存储库链接
+        "repo": "https://github.com/1812z/sleepy", // 更多信息链接的目标, 可填存储库链接
         "more_text": "" // 内容将在状态信息和 "你可以通过这个页面知晓..." 中间插入 (不转义); ps: 可以在这里放你联系方式的链接
     }
 }
