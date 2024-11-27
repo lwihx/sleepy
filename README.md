@@ -1,8 +1,10 @@
 # sleepy
 
-> Are you sleeping?
+> What are you doing?
 
-一个查看个人在线状态的 Flask 网站，让他人能知道你不在而不是故意吊他/她
+一个查看个人在线状态，以及视奸他在用什么软件的 Flask 网站，让他人能知道你不在而不是故意吊他/她
+仅仅是在仓库中加入了App_name字段,手机客户端使用请搭配Macrodroid，来实现切换应用上报信息/同步睡眠信息
+Macrodroid配置文件请下载仓库中的"前台应用状态.macro"
 
 [**演示**](#preview) / [**部署**](#部署) / [**使用**](#使用) / [**关于**](#关于)
 
@@ -10,7 +12,7 @@
 
 ## Preview
 
-演示站: [Here](https://sleepy.wyf9.top)
+演示站: [Here](https://sleepy.1812z.top)
 
 网页:
 
@@ -24,25 +26,15 @@
 
 ## 部署
 
-> [!WARNING]
-> 如果要创建自用的 repo 而不是贡献此仓库, 建议使用模板创建而非直接 Fork (Fork 不能设置私有, 意味着 *他人可以看到你的配置信息, **包括 `secret`***)
-
-- 使用模板创建: [link here](https://github.com/new?template_name=sleepy&template_owner=wyf9) or 直接选择右上角的 `Use this template`:
-
-![use this template](img/use-this-template.png)
-
-进入 repo 创建页, 即可选择仓库类型为 `Private`.
-
----
 
 理论上全平台通用, 安装了 Python >= **3.6** 即可
 
 1. Clone 本仓库 (建议先 Fork / Use this template)
 
 ```shell
-git clone https://github.com/wyf9/sleepy.git
+git clone https://github.com/1812z/sleepy.git
 # or ssh:
-# git clone git@github.com:wyf9/sleepy.git
+# git clone git@github.com:1812z/sleepy.git
 ```
 
 2. 安装依赖
@@ -126,7 +118,7 @@ Press CTRL+C to quit
 | `/query`                               | 获取状态            |
 | `/get/status_list`                     | 获取可用状态列表    |
 | `/set?secret=<secret>&status=<status>` | 设置状态 (url 参数) |
-| `/set/<secret>/<status>`               | 设置状态 (路径)     |
+
 
 1. `/query`:
 
@@ -204,16 +196,9 @@ Press CTRL+C to quit
 }
 ```
 
-4. `/set/<secret>/<status>`
 
-同上 `3.`, 唯一的不同是 url 格式
 
 ## 客户端示例
 
 在 `_example/` 目录下, 可参考
 
-## 关于
-
-本项目灵感由 Bilibili UP @ [WinMEMZ](https://space.bilibili.com/417031122) 而来: [site](https://maao.cc/sleepy/) / [blog](https://www.maodream.com/archives/192/), 并~~部分借鉴~~使用了前端代码, 在此十分感谢。
-
-如有 Bug / 建议, 请 [issue](https://github.com/wyf9/sleepy/issues/new) or [More contact](https://wyf9.top/#/contact).
