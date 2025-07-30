@@ -11,10 +11,11 @@ import json
 global server
 
 # 密钥
-SECRET = 'YourSecret'
+SECRET = 'Lwihx'
 # 服务列表, 末尾不加 `/`
 SERVER_LIST = ['https://example.com',
                'http://192.168.114.114',
+               'http://192.168.101.6:9010',
                'http://192.168.191.191:9810']
 # 请求重试次数
 RETRY = 3
