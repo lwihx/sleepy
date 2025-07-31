@@ -7,7 +7,7 @@ version now: 2
     "debug": false, // Flask 服务器的 debug 开关
     "host": "0.0.0.0", // 监听地址, 0.0.0.0 表示所有; 注意: 如果还需要监听 ipv6 请求，请设置为 ::
     "port": 9010, // 监听端口, 默认 9010
-    "secret": "lwihx", // 密钥, 更新状态时使用
+    "secret": "MySecret", // 密钥, 更新状态时使用
     "status": 0, // 目前的状态 (整数)
     "app_name": "系统桌面", //当前使用的软件名称
     "status_list": [ // 状态列表, 索引从 0 开始, 对应上面的 status
@@ -26,7 +26,7 @@ version now: 2
         // 还可添加更多，以此类推
     ],
     "other": { // 其他配置 (网页上的信息)
-        "user": "Lwihx", // 你的名字
+        "user": "YourName", // 你的名字
         "background": "https://ghsrc.wyf9.top/img13.jpg", // 背景图片 url, 可用网络上的图片 api; 推荐 repo: wyf01239/imgapi (网络 api 集合)
         "alpha": 0.85, // 卡片不透明度设置 (0 ~ 1), 0 为完全透明, 1 为完全不透明
         "learn_more": "GitHub Repo", // 更多信息链接的提示, 默认为 github repo
